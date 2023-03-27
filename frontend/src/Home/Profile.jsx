@@ -3,6 +3,7 @@ import cover from '../images/cover.png'
 import profile from '../images/cover.png'
 import { AiOutlineEdit } from 'react-icons/ai'
 import { skilldata } from './skillsdata'
+import axios from 'axios'
 
 function Profile() {
     const length = skilldata.length - 6;
@@ -11,6 +12,8 @@ function Profile() {
     function handlexpand() {
         setPills(pills + length)
     }
+
+
 
     return (
         <section className='profile col-3'>
@@ -22,7 +25,7 @@ function Profile() {
                 </button>
 
                 <div className="profile-details">
-                    <p className='fw-bold'>Username</p>
+                    <p className='fw-bold'>username</p>
                     <p className='text-muted'> 2nd year</p>
                     <small >Masters of Computer Applications (MCA)</small>
                     <br />
@@ -54,6 +57,32 @@ function Profile() {
                     }
 
                 </div>
+            </div>
+
+            <div className='clubs-section'>
+                <p className='fw-bold'>Clubs:</p>
+                <a href='/' className="clubs">
+                    <img src={profile} alt='-' className='club-img' />
+                    <div>
+                        <h6>Science club</h6>
+                        <small className='text-muted'> hell</small>
+                    </div>
+                </a>
+                <a href='/' className="clubs">
+                    <img src={profile} alt='-' className='club-img' />
+                    <div>
+                        <h6>Science club</h6>
+                        <small className='text-muted'> hell</small>
+                    </div>
+                </a>
+                <a href='/' className="clubs">
+                    <img src={profile} alt='-' className='club-img' />
+                    <div>
+                        <h6>Science club</h6>
+                        <small className='text-muted'> hell</small>
+                    </div>
+                </a>
+
             </div>
 
         </section>

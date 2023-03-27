@@ -1,21 +1,20 @@
 import React from 'react'
+import Announcement from './Announcement'
+import Feed from './Feed'
 
 import Navbar from './Navbar'
 import Profile from './Profile'
 
 function Home() {
+
     return (
         <>
             <Navbar />
             <div className="d-flex ">
                 <Profile />
 
-                <div className="col-6">
-                    feed
-                </div>
-                <div className="col-3">
-                    announcement
-                </div>
+                <Feed />
+                <Announcement />
             </div>
         </>
     )

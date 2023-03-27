@@ -11,6 +11,18 @@
       font-size: 14px;
   }
 
+  ::-webkit-scrollbar {
+      width: 6px;
+      background-color: var(--bg);
+      height: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+      background: lightgray;
+      border-radius: 5px;
+  }
+
+
 
   .glassbtn {
       background-color: var(--bg);
@@ -21,8 +33,18 @@
       padding: 0.5rem;
       margin: 1rem;
       font-size: 14px;
-      transition: all ease 500ms;
+      transition: all ease 300ms;
 
+  }
+
+  @keyframes move-text {
+      0% {
+          transform: translateX(100%);
+      }
+
+      100% {
+          transform: translateX(-100%);
+      }
   }
 
 
@@ -39,6 +61,10 @@
 
   .dropdown-menu-dark {
       font-size: small !important;
+
+      .dropdown-item {
+          background-color: #343a40;
+      }
   }
 
 
@@ -85,7 +111,7 @@
 
               &.active {
                   svg {
-                      fill: greenyellow;
+                      fill: #00aeee;
                   }
               }
 
@@ -93,7 +119,7 @@
 
                   &:hover,
                   &.active {
-                      fill: greenyellow;
+                      fill: #00aeee;
                   }
               }
           }
@@ -125,7 +151,7 @@
           -webkit-backdrop-filter: blur(20px);
           backdrop-filter: blur(20px);
           border-radius: 15px;
-          transition: all ease 500ms;
+          transition: all ease 300ms;
 
           &:hover {
               box-shadow: 0px 0px 1px 0px white;
@@ -184,7 +210,7 @@
       }
 
       .skills-section {
-          padding: 1.5rem;
+          padding: 1.5rem 1.5rem 0rem 1.5rem;
 
 
           .skill-pills {
@@ -193,7 +219,7 @@
               -webkit-backdrop-filter: blur(20px);
               backdrop-filter: blur(20px);
               border-radius: 25px;
-              transition: all ease 500ms;
+              transition: all ease 300ms;
               padding: 0.3rem 2rem;
               margin: 0.5rem;
               font-size: small;
@@ -209,4 +235,102 @@
           }
       }
 
+      .clubs-section {
+          padding: 1.5rem;
+
+
+          .clubs {
+              display: flex;
+              align-items: center;
+              margin-top: 0.5rem;
+              text-decoration: none;
+
+
+              &:hover{
+                box-shadow: 0px 0px 1px 0px white;
+                border-radius: 15px;
+              }
+
+              .club-img {
+                  border: 5px solid var(--bg);
+                  width: 60px;
+                  height: 60px;
+                  border-radius: 15px;
+                  margin-right: 1.5rem;
+              }
+
+              h6 {
+                  margin: 0;
+              }
+          }
+
+
+
+      }
+
+  }
+
+  .announcement {
+
+      * {
+          background-color: transparent;
+      }
+
+      .announcement-card {
+          width: 95%;
+          padding: 1rem 1rem 0rem 1rem;
+          height: 100vh;
+          margin: 1rem 0rem;
+          background-color: var(--bg);
+          border: 1px solid rgba(255, 255, 255, 0.222);
+          -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+          border-radius: 15px;
+          transition: all ease 300ms;
+
+
+          &:hover {
+              box-shadow: 0px 0px 1px 0px white;
+              border: 1px solid rgba(255, 255, 255, 0.454);
+          }
+
+          ::-webkit-scrollbar {
+              width: 6px;
+              height: 4px;
+          }
+
+          ::-webkit-scrollbar-thumb {
+              background: lightgray;
+              border-radius: 5px;
+          }
+
+          .announcement-list {
+              overflow-y: hidden;
+              height: 90%;
+
+              &:hover {
+                  overflow-y: scroll;
+              }
+
+
+
+
+              .announcement-item {
+                  font-size: 14px;
+                  border-bottom: 1px solid var(--bg);
+
+                  p {
+                      margin: 0;
+                      padding: 0.4rem;
+                  }
+              }
+          }
+      }
+
+
+  }
+
+
+  .feed {
+      padding: 1rem;
   }
