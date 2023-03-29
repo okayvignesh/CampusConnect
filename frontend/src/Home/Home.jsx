@@ -5,13 +5,13 @@ import Feed from './Feed'
 import Navbar from './Navbar'
 import Profile from './Profile'
 
-function Home() {
-
+function Home(props) {
+    const { username } = props;
     return (
         <>
             <Navbar />
             <div className="d-flex ">
-                <Profile />
+                <Profile username={username} />
 
                 <Feed />
                 <Announcement />

@@ -4,7 +4,6 @@ import Login from "./Login"
 import Register from "./Register"
 import { useState } from "react"
 
-
 function App() {
   const [username, setUsername] = useState('');
 
@@ -12,13 +11,14 @@ function App() {
     setUsername(newUsername);
   }
 
+
   return (
     <>
       <BrowserRouter>
         <Routes>
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login onUsernameChange={handleUsernameChange} />} />
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home username={username} />} />
         </Routes>
       </BrowserRouter>
 
