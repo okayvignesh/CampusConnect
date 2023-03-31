@@ -18,16 +18,23 @@ app.use(express.static('dist'));
 
 
 
-app.get('/userdata/:param', (req, res) => {
-    const param = req.params.param;
-    const query = `SELECT * FROM users WHERE username='${param}'`;
-    db.query(query, (err, results) => {
-        if (err) {
-            return res.status(500).json({ error: err.message });
+app.get('/userdata', (req, res) => {
+    const paramQuery = 'SELECT username FROM log ORDER BY id DESC LIMIT 1';
+    db.query(paramQuery, (paramErr, paramResult) => {
+        if (paramErr) {
+            return res.status(500).json({ error: paramErr.message });
         }
-        res.json(results);
+        const username = paramResult[0].username;
+        const userQuery = `SELECT * FROM users WHERE username='${username}' LIMIT 1`;
+        db.query(userQuery, (err, results) => {
+            if (err) {
+                return res.status(500).json({ error: err.message });
+            }
+            res.json(results);
+        });
     });
 });
+
 
 
 

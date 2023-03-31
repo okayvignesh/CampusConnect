@@ -7,6 +7,11 @@
       font-weight: 400;
   }
 
+  a {
+      color: white !important;
+      text-decoration: none !important;
+  }
+
   p {
       font-size: 14px;
   }
@@ -22,6 +27,19 @@
       border-radius: 5px;
   }
 
+  .input-text {
+      background-color: var(--bg);
+      opacity: 0.8;
+      border: none;
+      outline: none;
+      border-radius: 5px;
+      padding: 0.4rem 1rem;
+      color: white;
+      font-size: small;
+      border: 1px solid rgba(255, 255, 255, 0.249);
+      width: 100%;
+  }
+
 
 
   .glassbtn {
@@ -35,6 +53,11 @@
       font-size: 14px;
       transition: all ease 300ms;
 
+
+      &.active {
+          background-color: white;
+          color: black;
+      }
   }
 
   @keyframes move-text {
@@ -138,7 +161,10 @@
 
 
   .profile {
-      background-color: var(--dark);
+
+      a {
+          background-color: transparent;
+      }
 
 
       .profile-card {
@@ -246,9 +272,9 @@
               text-decoration: none;
 
 
-              &:hover{
-                box-shadow: 0px 0px 1px 0px white;
-                border-radius: 15px;
+              &:hover {
+                  box-shadow: 0px 0px 1px 0px white;
+                  border-radius: 15px;
               }
 
               .club-img {
@@ -280,7 +306,7 @@
           width: 95%;
           padding: 1rem 1rem 0rem 1rem;
           height: 100vh;
-          margin: 1rem 0rem;
+          margin: 1rem;
           background-color: var(--bg);
           border: 1px solid rgba(255, 255, 255, 0.222);
           -webkit-backdrop-filter: blur(20px);
@@ -333,4 +359,73 @@
 
   .feed {
       padding: 1rem;
+      border: 1px solid var(--bg);
+      border-radius: 10px;
+
+      .feed-container {
+          .glassbtn {
+              width: 20%;
+
+              &:hover {
+                  background-color: white;
+                  color: black;
+              }
+          }
+      }
+
+      .posts-container {
+          height: 90%;
+          overflow-y: scroll;
+      }
+  }
+
+  .myprofile {
+      display: flex;
+      justify-content: center;
+      margin: 1rem;
+
+      * {
+          background-color: transparent;
+      }
+
+      .myprofile-img {
+          height: 200px;
+          width: 200px;
+          border: 2px solid var(--bg);
+          border-radius: 10px;
+          margin: 1rem;
+
+          img {
+              height: 100%;
+              width: 100%;
+              border-radius: 10px;
+          }
+      }
+
+      .myprofile-banner {
+          padding: 2rem;
+          width: 1000px;
+          height: fit-content;
+          overflow-y: scroll;
+          background-color: var(--bg);
+          border: 1px solid rgba(255, 255, 255, 0.222);
+          -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+          border-radius: 15px;
+          transition: all ease 300ms;
+
+
+          &:hover {
+              box-shadow: 0px 0px 1px 0px white;
+              border: 1px solid rgba(255, 255, 255, 0.454);
+          }
+
+          .myprofile-items {
+              display: flex;
+              align-items: center;
+              margin: 1rem;
+              justify-content: start;
+          }
+
+      }
   }

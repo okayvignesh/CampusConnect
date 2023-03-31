@@ -31,8 +31,6 @@ function Register() {
 
     function handleSubmit(e) {
         e.preventDefault();
-
-        console.log(formvalue);
         axios.post(`${import.meta.env.VITE_URL}/register`, {
             ...formvalue,
             skills: selectedSkills.map(skill => skill.value) 

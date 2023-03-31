@@ -4,7 +4,6 @@ import axios from 'axios';
 import Error from './alerts/error';
 
 function Login(props) {
-    const [username, setUsername] = useState('');
     const [showAlert, setShowAlert] = useState(false);
     const navigate = useNavigate();
     const [formvalue, setFormvalue] = useState({
@@ -26,8 +25,6 @@ function Login(props) {
         })
             .then(response => {
                 if (response.status === 200) {
-                    setUsername(response.data[0].username);
-                    props.onUsernameChange(response.data[0].username);
                     navigate('/');
                 } else {
                     console.error(response.data.message);

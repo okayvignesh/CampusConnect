@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useLayoutEffect, useState } from 'react'
 import cover from '../images/cover.png'
 import profile from '../images/cover.png'
 import { AiOutlineEdit } from 'react-icons/ai'
@@ -11,34 +11,20 @@ function Profile(props) {
     const length = skillsdata.length - 6;
     const [pills, setPills] = useState(6)
     const [data, setData] = useState('')
-    const { username } = props;
 
     function handlexpand() {
         setPills(pills + length)
     }
 
 
-    useEffect(() => {
-        function fetch() {
-            axios.get(`${import.meta.env.VITE_URL}/userdata/${'vignesh'}`)
-                .then(response => {
-                    setData(response.data[0])
-                })
-                .catch(error => {
-                    console.log(error);
-                });
-        }
-
-        fetch();
-
-    }, [])
 
     useEffect(() => {
-        if (data) {
-            const skills = JSON.parse(data.skills);
+        if (props.data) {
+            const skills = JSON.parse(props.data.skills);
             setSkillsdata(skills)
         }
-    }, [data]);
+    }, [props.data]);
+
 
 
     return (
@@ -51,14 +37,16 @@ function Profile(props) {
                 </button>
 
                 <div className="profile-details">
-                    <p className='fw-bold text-capitalize'>{data.username}</p>
+                    <p className='fw-bold text-capitalize'>{props.data.username}</p>
                     <p className='text-muted'> 2nd year</p>
-                    <small >{data.course}</small>
+                    <small >{props.data.course}</small>
                     <br />
                     <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. In dolores, adipisci laborum animi nam nemo dicta! Voluptatem possimus esse saepe.</small>
-                    <button className="glassbtn w-75">
-                        My Profile
-                    </button>
+                    <a href="/profile">
+                        <button className="glassbtn w-75">
+                            My Profile
+                        </button>
+                    </a>
                 </div>
             </div>
 
