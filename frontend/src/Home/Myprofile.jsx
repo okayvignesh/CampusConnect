@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from './Navbar'
 import { useState, useEffect } from 'react';
-import profile from '../images/cover.png'
+import profile from '../images/img1.jpg'
 
 function Myprofile(props) {
     const [data, setData] = useState('')

@@ -1,5 +1,7 @@
 import React from 'react'
 import { AiFillNotification } from 'react-icons/ai'
+import img from '../images/image3.jpg'
+import { andata } from './AnnouncementData'
 
 function Announcement() {
     return (
@@ -12,57 +14,20 @@ function Announcement() {
                 <hr />
 
 
-                <div className="announcement-list">
-                    <div className="announcement-item">
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim, deserunt?</p>
-                    </div>
-                    <div className="announcement-item">
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim, deserunt?</p>
-                    </div>
-                    <div className="announcement-item">
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim, deserunt?</p>
-                    </div>
-                    <div className="announcement-item">
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim, deserunt?</p>
-                    </div>
-                    <div className="announcement-item">
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim, deserunt?</p>
-                    </div>
-                    <div className="announcement-item">
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim, deserunt?</p>
-                    </div>
-                    <div className="announcement-item">
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim, deserunt?</p>
-                    </div>
+                <div className="announcement-list ">
+                    {
+                        andata.map((value, index) => {
+                            return (
+                                <div className="announcement-item" key={index}>
+                                    <div className='announcement-img'><img src={value.img} loading="lazy" alt='-' /></div>
+                                    <p className='m-0'>{value.desc}</p>
+                                    <button className='glassbtn m-2 w-75'><a href={'//'+value.link} target="_blank">Apply now</a></button>
+                                </div>
+                            )
+                        })
+                    }
 
-                    <div className="announcement-item">
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim, deserunt?</p>
-                    </div>
-                    <div className="announcement-item">
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim, deserunt?</p>
-                    </div>
-                    <div className="announcement-item">
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim, deserunt?</p>
-                    </div>
-                    <div className="announcement-item">
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim, deserunt?</p>
-                    </div>
 
-                    <div className="announcement-item">
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim, deserunt?</p>
-                    </div>
-                    <div className="announcement-item">
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim, deserunt?</p>
-                    </div>
-                    <div className="announcement-item">
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim, deserunt?</p>
-                    </div>
-                    <div className="announcement-item">
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim, deserunt?</p>
-                    </div>
-                    <div className="announcement-item">
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim, deserunt?</p>
-                    </div>
 
                 </div>
             </div>

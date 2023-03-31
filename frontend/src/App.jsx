@@ -5,6 +5,7 @@ import Register from "./Register"
 import Myprofile from "./Home/Myprofile"
 import { useState, useEffect } from "react"
 import axios from "axios"
+import Mycourse from "./Home/Mycourse"
 
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/" element={<Home />} />
           <Route path="/profile" element={<Myprofile data={data} />} />
+          <Route path="/course" element={<Mycourse data={data} />} />
         </Routes>
       </BrowserRouter>
 
