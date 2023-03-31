@@ -1,10 +1,17 @@
 import React, { useLayoutEffect, useState } from 'react'
 import cover from '../images/cover.png'
-import profile from '../images/cover.png'
+import profile from '../images/img1.jpg'
 import { AiOutlineEdit } from 'react-icons/ai'
 // import { skilldata } from './skillsdata'
 import axios from 'axios'
 import { useEffect } from 'react'
+import img1 from '../images/image1.jpg'
+import img2 from '../images/image3.jpg'
+import img3 from '../images/image4.jpg'
+
+
+
+
 
 function Profile(props) {
     const [skillsdata, setSkillsdata] = useState([])
@@ -31,7 +38,7 @@ function Profile(props) {
         <section className='profile col-3'>
             <div className="profile-card">
                 <img src={cover} alt='-' className='cover-img' />
-                <img src={profile} alt='-' className='profile-img' />
+                <div className='profile-img' ><img src={profile} alt='-' /></div>
                 <button className='glassbtn p-1 edit-btn '>
                     <AiOutlineEdit color="white" size={20} />
                 </button>
@@ -45,6 +52,11 @@ function Profile(props) {
                     <a href="/profile">
                         <button className="glassbtn w-75">
                             My Profile
+                        </button>
+                    </a>
+                    <a href="/course">
+                        <button className="glassbtn m-1 w-75">
+                            My Course
                         </button>
                     </a>
                 </div>
@@ -76,24 +88,24 @@ function Profile(props) {
             <div className='clubs-section'>
                 <p className='fw-bold'>Clubs:</p>
                 <a href='/' className="clubs">
-                    <img src={profile} alt='-' className='club-img' />
+                    <img src={img1} alt='-' className='club-img' />
                     <div>
                         <h6>Science club</h6>
-                        <small className='text-muted'> hell</small>
+                        <small className='text-muted'> Science & Technology</small>
                     </div>
                 </a>
                 <a href='/' className="clubs">
-                    <img src={profile} alt='-' className='club-img' />
+                    <img src={img3} alt='-' className='club-img' />
                     <div>
-                        <h6>Science club</h6>
-                        <small className='text-muted'> hell</small>
+                        <h6>Arts club</h6>
+                        <small className='text-muted'> Arts </small>
                     </div>
                 </a>
                 <a href='/' className="clubs">
-                    <img src={profile} alt='-' className='club-img' />
+                    <img src={img2} alt='-' className='club-img' />
                     <div>
-                        <h6>Science club</h6>
-                        <small className='text-muted'> hell</small>
+                        <h6>Theatre club</h6>
+                        <small className='text-muted'> Theatrics </small>
                     </div>
                 </a>
 

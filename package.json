@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "concurrently": "^8.0.1"
+  },
+  "name": "campusconnect",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "npm start --prefix backend",
+    "client": "npm run dev --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/okayvignesh/CampusConnect.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/okayvignesh/CampusConnect/issues"
+  },
+  "homepage": "https://github.com/okayvignesh/CampusConnect#readme",
+  "description": ""
+}
