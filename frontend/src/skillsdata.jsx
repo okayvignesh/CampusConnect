@@ -2,5 +2,21 @@ export const skills = [
     { value: 'python', label: 'python' },
     { value: 'java', label: 'java' },
     { value: 'javascript', label: 'Javascript' },
-
+    { value: 'C', label: 'C' },
+    { value: 'C++', label: 'C++' },
+    { value: 'C#', label: 'C#' },
+    { value: 'Dance', label: 'Dance' },
+    { value: 'Music', label: 'Music' },
+    { value: 'Musical Instruments', label: 'Javascript' },
+    { value: 'MS Office', label: 'MS Office' },
+    { value: 'VB NET', label: 'VB NET' },
+    { value: 'SQL', label: 'SQL' },
+    { value: 'Node Js', label: 'Node Js' },
+    { value: 'React Js', label: 'React Js' },
+    { value: 'Express Js', label: 'Express Js' },
+    { value: 'Mongo DB', label: 'Mongo DB' },
+    { value: 'GO', label: 'GO' },
+    { value: 'Rust', label: 'Rust' },
+    { value: 'Php', label: 'Php' },
+    { value: 'Screenplay & Drama', label: 'Screenplay & Drama' }
 ]
