@@ -1,17 +1,29 @@
-import React, { useState } from 'react'
+import React, { useLayoutEffect, useState } from 'react'
 import cover from '../images/cover.png'
 import profile from '../images/cover.png'
 import { AiOutlineEdit } from 'react-icons/ai'
-import { skilldata } from './skillsdata'
+// import { skilldata } from './skillsdata'
 import axios from 'axios'
+import { useEffect } from 'react'
 
-function Profile() {
-    const length = skilldata.length - 6;
+function Profile(props) {
+    const [skillsdata, setSkillsdata] = useState([])
+    const length = skillsdata.length - 6;
     const [pills, setPills] = useState(6)
+    const [data, setData] = useState('')
 
     function handlexpand() {
         setPills(pills + length)
     }
+
+
+
+    useEffect(() => {
+        if (props.data) {
+            const skills = JSON.parse(props.data.skills);
+            setSkillsdata(skills)
+        }
+    }, [props.data]);
 
 
 
@@ -25,14 +37,16 @@ function Profile() {
                 </button>
 
                 <div className="profile-details">
-                    <p className='fw-bold'>username</p>
+                    <p className='fw-bold text-capitalize'>{props.data.username}</p>
                     <p className='text-muted'> 2nd year</p>
-                    <small >Masters of Computer Applications (MCA)</small>
+                    <small >{props.data.course}</small>
                     <br />
                     <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. In dolores, adipisci laborum animi nam nemo dicta! Voluptatem possimus esse saepe.</small>
-                    <button className="glassbtn w-75">
-                        My Profile
-                    </button>
+                    <a href="/profile">
+                        <button className="glassbtn w-75">
+                            My Profile
+                        </button>
+                    </a>
                 </div>
             </div>
 
@@ -40,7 +54,7 @@ function Profile() {
                 <p className='fw-bold'>Skills:</p>
                 <div className="row">
                     {
-                        skilldata.slice(0, pills).map((value, index) => {
+                        skillsdata.slice(0, pills).map((value, index) => {
                             return (
                                 <div className="col-2 skill-pills" key={index}>
                                     {value}
@@ -50,7 +64,7 @@ function Profile() {
                         })
                     }
 
-                    {pills < skilldata.length &&
+                    {pills < skillsdata.length &&
                         <button className="col-2 skill-pills" onClick={handlexpand}>
                             {length}+ more
                         </button>
