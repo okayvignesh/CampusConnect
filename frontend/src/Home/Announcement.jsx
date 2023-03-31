@@ -14,7 +14,7 @@ function Announcement() {
                 <hr />
 
 
-                <div className="announcement-list">
+                <div className="announcement-list ">
                     {
                         andata.map((value, index) => {
                             return (
